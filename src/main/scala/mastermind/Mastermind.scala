@@ -13,17 +13,16 @@ val validColors = List('B', 'Y', 'R', 'G')
 
 /** Get a random color from the list of valid colors */
 def getRandomColor(): Color =
-  ???
+  val randomIndex = new Random().between(0, 3)
+  validColors(randomIndex)
 
 /** Given four colors, make a board from them */
 def makeBoardFromColors(c1: Color, c2: Color, c3: Color, c4: Color): Board =
-  ???
+  List(c1, c2, c3, c4).mkString
 
 /** Create a random board */
 def getRandomBoard(): Board =
-  val random = new Random()
-  val shuffledColors = random.shuffle(validColors)
-  shuffledColors.mkString
+  makeBoardFromColors(getRandomColor(), getRandomColor(), getRandomColor(), getRandomColor())
 
 
 /** Play one round of the game */
