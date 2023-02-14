@@ -10,8 +10,6 @@ import java.awt.Color
 /** Flip an image along its horizontal axis
   */
 def flipHorizontal(image: BufferedImage): BufferedImage = {
-  // val image = load(imageFilename)
-
   val width = image.getWidth
   val height = image.getHeight
   val flipped = new BufferedImage(width, height, image.getType)
@@ -25,8 +23,6 @@ def flipHorizontal(image: BufferedImage): BufferedImage = {
 /** Flip an image along its vertical axis
   */
 def flipVertical(image: BufferedImage): BufferedImage = {
-  // val image = load(imageFilename)
-
   val width = image.getWidth
   val height = image.getHeight
   val flipped = new BufferedImage(width, height, image.getType)
@@ -34,7 +30,6 @@ def flipVertical(image: BufferedImage): BufferedImage = {
     flipped.setRGB(x, height - y - 1, image.getRGB(x, y))
   }
 
-  // save(flipped, outputFilename)
   flipped
 }
 
@@ -45,8 +40,6 @@ def flipVertical(image: BufferedImage): BufferedImage = {
 /** Rotate an image 90 degrees clockwise
   */
 def rotateRight(image: BufferedImage): BufferedImage = {
-  // val image = load(imageFilename)
-
   val width = image.getWidth
   val height = image.getHeight
   val rotated = new BufferedImage(height, width, image.getType)
@@ -54,15 +47,12 @@ def rotateRight(image: BufferedImage): BufferedImage = {
     rotated.setRGB(height - y - 1, x, image.getRGB(x, y))
   }
 
-  // save(rotated, outputFilename)
   rotated
 }
 
 /** Rotate an image 90 degrees counter-clockwise
   */
 def rotateLeft(image: BufferedImage): BufferedImage = {
-  // val image = load(imageFilename)
-
   val width = image.getWidth
   val height = image.getHeight
   val rotated = new BufferedImage(height, width, image.getType)
@@ -70,7 +60,6 @@ def rotateLeft(image: BufferedImage): BufferedImage = {
     rotated.setRGB(y, width - x - 1, image.getRGB(x, y))
   }
 
-  // save(rotated, outputFilename)
   rotated
 }
 
@@ -81,8 +70,6 @@ def rotateLeft(image: BufferedImage): BufferedImage = {
 /** Convert an image to grayscale
   */
 def grayscale(image: BufferedImage): BufferedImage = {
-  // val image = load(imageFilename)
-
   // create a new, empty image to copy pixels into
   val width = image.getWidth
   val height = image.getHeight
@@ -100,7 +87,6 @@ def grayscale(image: BufferedImage): BufferedImage = {
       result.setRGB(column, row, newPixel.getRGB)
     }
 
-  // save(result, outputFilename)
   result
 }
 
