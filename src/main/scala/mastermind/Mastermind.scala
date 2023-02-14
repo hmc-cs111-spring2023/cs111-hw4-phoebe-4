@@ -21,11 +21,19 @@ def makeBoardFromColors(c1: Color, c2: Color, c3: Color, c4: Color): Board =
 
 /** Create a random board */
 def getRandomBoard(): Board =
-  ???
+  val random = new Random()
+  val shuffledColors = random.shuffle(validColors)
+  shuffledColors.mkString
+
 
 /** Play one round of the game */
 def playRound(board: Board): (Int, Int) =
-  ???
+  val first = readLine("Enter a guess for spot 1:")
+  val second = readLine("Enter a guess for spot 2:")
+  val third = readLine("Enter a guess for spot 3:")
+  val fourth = readLine("Enter a guess for spot 4:")
+
+  scoreGuess(board, first+second+third+fourth)
 
 /** Score a guess
   *
